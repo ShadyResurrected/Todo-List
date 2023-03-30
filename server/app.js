@@ -12,7 +12,7 @@ export const app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
-  origin : [], // website url that should be allowed to access this api
+  origin : [process.env.FRONTEND_URL], // website url that should be allowed to access this api
     methods : ["GET","POST","PUT","DELETE"],
     credentials : true
 }))
