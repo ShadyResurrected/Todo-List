@@ -4,7 +4,8 @@ import App from "./App";
 import "./styles/app.scss";
 import { createContext } from "react";
 
-export const server = "https://todo-server-zhvk.onrender.com/api/v1";
+
+export const server = import.meta.env.VITE_SERVER_URL;
 
 export const Context = createContext({ isAuthenticated: false });
 
