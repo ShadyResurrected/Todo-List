@@ -1,6 +1,13 @@
 import React from "react";
 
-const TodoItem = ({ title, descripiton, isCompleted }) => {
+const TodoItem = ({
+  title,
+  descripiton,
+  isCompleted,
+  updateHandler,
+  deleteHandler,
+  id,
+}) => {
   return (
     <div className="todo">
       <div>
@@ -8,8 +15,14 @@ const TodoItem = ({ title, descripiton, isCompleted }) => {
         <p>{descripiton}</p>
       </div>
       <div>
-        <input type="checkbox" checked={isCompleted}/>
-        <button className="btn">Delete</button>
+        <input
+          onChange={() => updateHandler(id)}
+          type="checkbox"
+          checked={isCompleted}
+        />
+        <button onClick={() => deleteHandler(id)} className="btn">
+          Delete
+        </button>
       </div>
     </div>
   );
